@@ -3,20 +3,16 @@
     <Navbar />
     <div class="content">
       <div class="textBox">
-        <h2>Find your<br /><span>STAR</span></h2>
+        <span class="header">
+          <h2>Find your<br /><span class="star">STAR</span></h2>
+          <img src="../assets/starlgo.png" alt="" />
+        </span>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ab,
-          voluptatem ipsam rem explicabo id iure voluptates ipsa aliquam facere,
-          deleniti odit quo hic velit sequi itaque assumenda repellat facilis.
+          Amplijob is a job portal search for find job, in which you as a worker
+          will present your profile as an applicant, and the companies will
+          request your profile
         </p>
         <Button text="View all offers" class="default" />
-      </div>
-      <div class="cards">
-        <JobCard
-          title="Empresalia"
-          logo="https://media-exp1.licdn.com/dms/image/C4D0BAQFpPZVRx0WJnQ/company-logo_200_200/0/1625143570989?e=2147483647&v=beta&t=H2HG8Fk33LU4YDqW6h0Z37tV4YT_tQqOtWokqlks1V4"
-          :bgColor="black"
-        />
       </div>
     </div>
     <!-- <ul class="thumb">
@@ -25,22 +21,15 @@
       <li><img src="../assets/logo.png" alt="" /></li>
     </ul> -->
   </section>
-  <section class="sec">
-    <div class="content">
-      <div class="textBox"></div>
-    </div>
-  </section>
 </template>
 
 <script>
 import Navbar from "../components/Navbar.vue";
 import Button from "../components/Button.vue";
-import JobCard from "../components/JobCard.vue";
 export default {
   components: {
     Navbar,
     Button,
-    JobCard,
   },
 };
 </script>
@@ -53,14 +42,17 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--white-color);
   transition: 0.5s;
+}
+.header {
+  display: flex;
+  gap: 4rem;
 }
 .content {
   position: relative;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   z-index: 10;
 }
@@ -72,11 +64,14 @@ section {
   max-width: 600px;
 }
 .content .textBox h2 {
-  color: #000;
+  color: var(--white-color);
   font-size: 3.4em;
   line-height: 1.5em;
   font-weight: 1000;
   text-transform: uppercase;
+}
+.content .textBox img {
+  max-width: 200px;
 }
 .content .textBox h2 span {
   font-size: 2em;
@@ -92,7 +87,7 @@ section {
   -webkit-text-fill-color: transparent;
 }
 .content .textBox p {
-  color: #000;
+  color: var(--white-color);
   font-weight: 0;
 }
 .content .textBox a {
@@ -127,9 +122,21 @@ section {
 .thumb li img {
   max-width: 40px;
 }
+.star {
+  transition: 0.4s ease-in-out;
+}
+.star:hover {
+  text-decoration-line: underline;
+  text-decoration-style: "solid";
+  text-decoration-color: rgba(0, 92, 230, 1);
+  text-decoration-thickness: 5px;
+}
 @media (max-width: 648px) {
   section {
     padding: 40px;
+  }
+  .header img {
+    display: none;
   }
   .content {
     flex-direction: column;

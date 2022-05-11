@@ -1,7 +1,7 @@
 <template>
   <article :style="cssClass" class="card">
     <h3>{{ title }}</h3>
-    <img :src="logo" alt="Logo" />
+    <img :src="require(`../assets/${logo}`)" alt="Logo" />
   </article>
 </template>
 
@@ -32,4 +32,14 @@ export default {
 </script>
 
 <style>
+.card {
+  padding: 1.2rem;
+  color: white;
+  max-width: 20vw;
+}
+.card img {
+  max-width: 100%;
+  object-fit: cover;
+  max-height: 100%;
+}
 </style>

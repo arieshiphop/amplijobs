@@ -17,4 +17,7 @@
   box-sizing: border-box;
   font-family: Poppins;
 }
+body {
+  background-image: linear-gradient(315deg, #121212 0%, #212121 90%);
+}
 </style>

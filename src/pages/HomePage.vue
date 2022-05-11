@@ -1,6 +1,6 @@
 <template>
   <section class="sec">
-    <Navbar></Navbar>
+    <Navbar />
     <div class="content">
       <div class="textBox">
         <h2>Find your<br /><span>STAR</span></h2>
@@ -9,22 +9,38 @@
           voluptatem ipsam rem explicabo id iure voluptates ipsa aliquam facere,
           deleniti odit quo hic velit sequi itaque assumenda repellat facilis.
         </p>
-        <a href="">View all offers</a>
+        <Button text="View all offers" class="default" />
+      </div>
+      <div class="cards">
+        <JobCard
+          title="Empresalia"
+          logo="https://media-exp1.licdn.com/dms/image/C4D0BAQFpPZVRx0WJnQ/company-logo_200_200/0/1625143570989?e=2147483647&v=beta&t=H2HG8Fk33LU4YDqW6h0Z37tV4YT_tQqOtWokqlks1V4"
+          :bgColor="black"
+        />
       </div>
     </div>
-    <ul class="thumb">
+    <!-- <ul class="thumb">
       <li><img src="../assets/logo.png" alt="" /></li>
       <li><img src="../assets/logo.png" alt="" /></li>
       <li><img src="../assets/logo.png" alt="" /></li>
-    </ul>
+    </ul> -->
+  </section>
+  <section class="sec">
+    <div class="content">
+      <div class="textBox"></div>
+    </div>
   </section>
 </template>
 
 <script>
 import Navbar from "../components/Navbar.vue";
+import Button from "../components/Button.vue";
+import JobCard from "../components/JobCard.vue";
 export default {
   components: {
     Navbar,
+    Button,
+    JobCard,
   },
 };
 </script>
@@ -49,6 +65,9 @@ section {
   z-index: 10;
 }
 .content .textBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   position: relative;
   max-width: 600px;
 }
@@ -80,7 +99,7 @@ section {
   display: inline-block;
   margin-top: 20px;
   padding: 8px 20px;
-  background: #0062be;
+  background: var(--blue-color);
   color: #fff;
   border-radius: 40px;
   font-weight: 500;
@@ -127,15 +146,8 @@ section {
     font-size: 14px;
     padding: 8px 15px;
   }
-  .content .imgBox {
-    width: 100%;
-    display: flex;
-    padding-right: 0;
-    margin-top: 50px;
-    justify-content: center;
-  }
   .content .imgBox img {
-    max-width: 150px;
+    display: none;
   }
 }
 </style>

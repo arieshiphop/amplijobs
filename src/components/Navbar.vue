@@ -5,9 +5,9 @@
     </a>
     <div @click="onClickHamburguer" class="toggleMenu"></div>
     <ul class="navigation">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Find a job</a></li>
-      <li><a href="#">About us</a></li>
+      <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/">Find a job</router-link></li>
+      <li><router-link to="/">About</router-link></li>
     </ul>
   </header>
 </template>
@@ -56,9 +56,10 @@ header ul li a {
   margin-left: 40px;
   text-decoration: none;
 }
-@media (max-width: 648px) {
+@media (max-width: 700px) {
   header {
     padding: 20px 40px;
+    z-index: 100;
   }
   header .logo {
     position: relative;
@@ -104,6 +105,7 @@ header ul li a {
     background-repeat: no-repeat;
     z-index: 2;
     cursor: pointer;
+    transition: 0.4s ease-in-out;
   }
   .toggleMenu.active {
     background: url("../assets/close.png");

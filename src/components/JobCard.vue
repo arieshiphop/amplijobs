@@ -1,21 +1,22 @@
 <template>
   <article :style="cssClass" class="card">
-    <h3>{{ title }}</h3>
-    <img :src="require(`../assets/${logo}`)" alt="Logo" />
+    <h3>{{ name }}</h3>
+    <img :src="require(`../assets/${picture}`)" alt="Logo" />
   </article>
 </template>
 
 <script>
 export default {
   props: {
-    title: {
+    name: {
       type: String,
       required: true,
     },
-    logo: {
+    picture: {
       type: String,
       required: true,
     },
+
     bgColor: {
       type: String,
       default: "var(--white-color)",

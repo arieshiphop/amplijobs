@@ -1,18 +1,19 @@
 <template>
   <section class="sec">
-    <Navbar />
     <div class="content">
       <div class="textBox">
         <span class="header">
-          <h2>Find your<br /><span class="star">STAR</span></h2>
+          <h2>Encuentra una<br /><span class="star">estrella</span></h2>
           <img src="../assets/starlgo.png" alt="" />
         </span>
         <p>
-          Amplijob is a job portal search for find job, in which you as a worker
-          will present your profile as an applicant, and the companies will
-          request your profile
+          Busca al trabajador ideal, que encaje con tus necesidades y
+          preferencias.
         </p>
-        <Button text="View all offers" class="default" />
+        <div class="buttons">
+          <Button text="Ver todas las ofertas" class="default" />
+          <Button text="Registrate" class="reversed" />
+        </div>
       </div>
     </div>
     <!-- <ul class="thumb">
@@ -24,11 +25,9 @@
 </template>
 
 <script>
-import Navbar from "../components/Navbar.vue";
 import Button from "../components/Button.vue";
 export default {
   components: {
-    Navbar,
     Button,
   },
 };
@@ -71,7 +70,8 @@ section {
   text-transform: uppercase;
 }
 .content .textBox img {
-  max-width: 200px;
+  max-width: 150px;
+  height: 150px;
 }
 .content .textBox h2 span {
   font-size: 2em;
@@ -131,7 +131,11 @@ section {
   text-decoration-color: rgba(0, 92, 230, 1);
   text-decoration-thickness: 5px;
 }
-@media (max-width: 648px) {
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+@media (max-width: 1000px) {
   section {
     padding: 40px;
   }
@@ -147,7 +151,10 @@ section {
     max-width: 100%;
   }
   .content .textBox h2 {
-    font-size: 3em;
+    font-size: 2.5em;
+  }
+  .content .textBox span {
+    font-size: 1em;
   }
   .content .textBox a {
     font-size: 14px;
@@ -155,6 +162,11 @@ section {
   }
   .content .imgBox img {
     display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .content .textBox span {
+    font-size: 0.6em;
   }
 }
 </style>

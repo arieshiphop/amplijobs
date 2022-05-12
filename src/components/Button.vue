@@ -34,11 +34,24 @@ button:hover {
 button:active {
   transform: translateY(2px);
 }
+@media screen and (max-width: 1000px) {
+  button {
+    font-size: 0.7em;
+  }
+}
 .default {
   background-color: var(--blue-color);
   color: white;
 }
 .default:hover {
   background: rgb(15, 108, 201);
+}
+.reversed {
+  background-color: var(--white-color);
+  color: black;
+  border: 2px solid var(--blue-color);
+}
+.reversed:hover {
+  background-color: rgb(196, 255, 250);
 }
 </style>

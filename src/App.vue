@@ -1,7 +1,16 @@
 <template>
+  <Navbar />
   <router-view />
 </template>
 
+<script>
+import Navbar from "./components/Navbar.vue";
+export default {
+  components: {
+    Navbar,
+  },
+};
+</script>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");

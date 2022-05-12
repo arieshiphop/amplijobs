@@ -5,9 +5,9 @@
     </a>
     <div @click="onClickHamburguer" class="toggleMenu"></div>
     <ul class="navigation">
-      <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/jobs">Find a job</router-link></li>
-      <li><router-link to="/about">About</router-link></li>
+      <li><router-link to="/">Inicio</router-link></li>
+      <li><router-link to="/ofertas">Encuentra empleados</router-link></li>
+      <li><router-link to="/about">Sobre nosotros</router-link></li>
     </ul>
   </header>
 </template>
@@ -18,8 +18,13 @@ export default {
     onClickHamburguer() {
       const toggleMenu = document.querySelector(".toggleMenu");
       const navigation = document.querySelector(".navigation");
-      toggleMenu.classList.toggle("active");
-      navigation.classList.toggle("active");
+      if (toggleMenu.classList.contains("active")) {
+        toggleMenu.classList.remove("active");
+        navigation.classList.remove("active");
+      } else {
+        toggleMenu.classList.add("active");
+        navigation.classList.add("active");
+      }
     },
   },
 };
@@ -56,10 +61,10 @@ header ul li a {
   margin-left: 40px;
   text-decoration: none;
 }
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   header {
-    padding: 20px 40px;
     z-index: 100;
+    padding: 50px;
   }
   header .logo {
     position: relative;
@@ -86,10 +91,11 @@ header ul li a {
   }
   header ul li a {
     display: inline-block;
+    color: black;
     font-weight: 400;
     margin-left: 0;
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.4em;
     margin: 10px 0;
   }
   header ul li a:hover {
@@ -106,6 +112,8 @@ header ul li a {
     z-index: 2;
     cursor: pointer;
     transition: 0.4s ease-in-out;
+    background-color: white;
+    border-radius: 50%;
   }
   .toggleMenu.active {
     background: url("../assets/close.png");

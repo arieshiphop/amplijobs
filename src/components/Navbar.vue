@@ -1,13 +1,12 @@
 <template>
   <header>
     <a href="">
-      <img src="../assets/full-logo-white.png" alt="" class="logo" />
+      <img src="../assets/full-logo.png" alt="" class="logo" />
     </a>
     <div @click="onClickHamburguer" class="toggleMenu"></div>
     <ul class="navigation">
-      <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/jobs">Find a job</router-link></li>
-      <li><router-link to="/about">About</router-link></li>
+      <li><router-link to="/">Inicio</router-link></li>
+      <li><router-link to="/talents">Encuentra un talento</router-link></li>
     </ul>
   </header>
 </template>
@@ -25,7 +24,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 header {
   z-index: 2;
   position: absolute;
@@ -51,7 +50,7 @@ header ul li {
 }
 header ul li a {
   display: inline-block;
-  color: var(--white-color);
+  color: black;
   font-weight: 400;
   margin-left: 40px;
   text-decoration: none;

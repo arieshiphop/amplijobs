@@ -1,7 +1,16 @@
 <template>
+  <Navbar />
   <router-view />
 </template>
 
+<script>
+import Navbar from "./components/Navbar.vue";
+export default {
+  components: {
+    Navbar,
+  },
+};
+</script>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
@@ -17,7 +26,17 @@
   box-sizing: border-box;
   font-family: Poppins;
 }
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+}
 body {
-  background-image: linear-gradient(315deg, #121212 0%, #212121 90%);
+  background: var(--white-color);
 }
 </style>

@@ -1,18 +1,14 @@
 <template>
   <section class="sec">
-    <Navbar />
     <div class="content">
       <div class="textBox">
         <span class="header">
-          <h2>Find your<br /><span class="star">STAR</span></h2>
-          <img src="../assets/starlgo.png" alt="" />
+          <h2>Encuentra un<br /><span class="star">talento</span></h2>
         </span>
         <p>
-          Amplijob is a job portal search for find job, in which you as a worker
-          will present your profile as an applicant, and the companies will
-          request your profile
+          Aquí ellos te buscan, aquí tú encuentras el talento que necesitas.
         </p>
-        <Button text="View all offers" class="default" />
+        <Button text="Ver talentos" class="default" />
       </div>
     </div>
     <!-- <ul class="thumb">
@@ -21,29 +17,40 @@
       <li><img src="../assets/logo.png" alt="" /></li>
     </ul> -->
   </section>
+  <video autoplay muted loop id="videoBG">
+    <source src="../assets/clouds.mp4" type="video/mp4" />
+  </video>
 </template>
 
 <script>
-import Navbar from "../components/Navbar.vue";
 import Button from "../components/Button.vue";
 export default {
   components: {
-    Navbar,
     Button,
   },
 };
 </script>
 <style scoped>
-section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  padding: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: 0.5s;
+#videoBG {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
+@media (min-aspect-ratio: 16/9) {
+  #videoBG {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  #videoBG {
+    width: auto;
+    height: 100%;
+  }
+}
+
 .header {
   display: flex;
   gap: 4rem;
@@ -64,8 +71,8 @@ section {
   max-width: 600px;
 }
 .content .textBox h2 {
-  color: var(--white-color);
-  font-size: 3.4em;
+  color: black;
+  font-size: 3em;
   line-height: 1.5em;
   font-weight: 1000;
   text-transform: uppercase;
@@ -77,17 +84,17 @@ section {
   font-size: 2em;
   background: linear-gradient(
     to right,
-    #f77a55 0%,
-    #eede4c 25%,
-    #ff4bf0 50%,
-    #9c6ca6 75%,
-    #6583c1 100%
+    #55a9f7 0%,
+    #4c4fee 25%,
+    #c64bff 50%,
+    #bd29b0 75%,
+    #e6217d 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .content .textBox p {
-  color: var(--white-color);
+  color: black;
   font-weight: 0;
 }
 .content .textBox a {
@@ -147,7 +154,7 @@ section {
     max-width: 100%;
   }
   .content .textBox h2 {
-    font-size: 3em;
+    font-size: 2em;
   }
   .content .textBox a {
     font-size: 14px;
@@ -155,6 +162,17 @@ section {
   }
   .content .imgBox img {
     display: none;
+  }
+}
+@media (min-width: 2048px) {
+  .content .textBox h2 {
+    font-size: 10em;
+  }
+  .content .textBox p {
+    font-size: 4em;
+  }
+  button {
+    font-size: 4em;
   }
 }
 </style>

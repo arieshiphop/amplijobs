@@ -32,7 +32,10 @@ export default {
 
 <style>
 .card {
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem;
   flex: 1 1 30%;
   margin: 18px;
   background: rgba(255, 255, 255, 0.13);
@@ -43,5 +46,11 @@ export default {
 }
 .card li {
   list-style: none;
+}
+@media (max-width: 900px) {
+  .card {
+    flex: 1 1 50%;
+    margin: 0;
+  }
 }
 </style>

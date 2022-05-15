@@ -8,7 +8,8 @@
         <p>
           Aquí ellos te buscan, aquí tú encuentras el talento que necesitas.
         </p>
-        <Button text="Ver talentos" class="default" />
+        <p>¡Sin registro, ni inicio de sesión!</p>
+        <Button @click="goTo('talents')" text="Ver talentos" class="default" />
       </div>
     </div>
     <!-- <ul class="thumb">
@@ -24,9 +25,15 @@
 
 <script>
 import Button from "../components/Button.vue";
+import { goTo } from "../global/functions.js";
 export default {
   components: {
     Button,
+  },
+  methods: {
+    goTo(url) {
+      goTo(url, this.$router);
+    },
   },
 };
 </script>
